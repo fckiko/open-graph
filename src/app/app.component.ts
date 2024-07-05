@@ -7,7 +7,7 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  //title = 'open-graph';
+  title = 'open-graph';
   constructor(private metaService: Meta) {}
     ngOnInit() {
       this.updateMetaTags();
