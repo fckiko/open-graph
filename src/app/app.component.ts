@@ -16,6 +16,6 @@ updateMetaTags() {
   this.metaService.updateTag({ property: 'og:type', content: 'website' });
   this.metaService.updateTag({ property: 'og:description', content: 'Your Dynamic Description' });
   this.metaService.updateTag({ property: 'og:image', content: 'dynamic-image.jpg' });
-  this.metaService.updateTag({ property: 'og:url', content: 'http://your-dynamic-domain.com' });
+  this.metaService.updateTag({ property: 'og:url', content: './assers/meta_images/LangingPage1.png' });
 }
 }
