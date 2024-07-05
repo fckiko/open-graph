@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +8,11 @@ import { Meta } from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit {
   title = 'open-graph';
-  constructor(private metaService: Meta) {}
-    ngOnInit() {
-      this.updateMetaTags();
-    }
-updateMetaTags() {
-  this.metaService.updateTag({ property: 'og:title', content: 'Your Dynamic Title' });
-  this.metaService.updateTag({ property: 'og:type', content: 'website' });
-  this.metaService.updateTag({ property: 'og:description', content: 'Your Dynamic Description' });
-  this.metaService.updateTag({ property: 'og:image', content: './assets/meta_images/LangingPage1.png' });
-  this.metaService.updateTag({ property: 'og:url', content: 'https://dev.bidsnbuys.com/' });
-}
+  constructor(private meta: Meta) {}
+  ngOnInit(): void {
+    this.meta.updateTag({ property: 'og:title', content: 'Bids n Buys - E-commerce Website' });
+    this.meta.updateTag({ property: 'og:description', content: 'Dynamic description of the Exciting Auctions: Feel the adrenaline rush as you place your bids and outbid others. Experience the excitement of winning auctions and securing the items you desire.' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://your-dynamic-image-url.com/image.jpg' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://dev.bidsnbuys.com/' });
+  }
 }
