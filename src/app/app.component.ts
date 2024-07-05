@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'open-graph';
+  constructor(private metaService: Meta) {
+    this.updateMetaTags();
+}
+updateMetaTags() {
+  this.metaService.updateTag({ property: 'og:title', content: 'Your Dynamic Title' });
+  this.metaService.updateTag({ property: 'og:type', content: 'website' });
+  this.metaService.updateTag({ property: 'og:description', content: 'Your Dynamic Description' });
+  this.metaService.updateTag({ property: 'og:image', content: 'dynamic-image.jpg' });
+  this.metaService.updateTag({ property: 'og:url', content: 'http://your-dynamic-domain.com' });
+}
 }
