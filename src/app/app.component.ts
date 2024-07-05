@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 
 @Component({
@@ -6,11 +6,12 @@ import { Meta } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'open-graph';
-  constructor(private metaService: Meta) {
-    this.updateMetaTags();
-}
+export class AppComponent implements OnInit {
+  //title = 'open-graph';
+  constructor(private metaService: Meta) {}
+    ngOnInit() {
+      this.updateMetaTags();
+    }
 updateMetaTags() {
   this.metaService.updateTag({ property: 'og:title', content: 'Your Dynamic Title' });
   this.metaService.updateTag({ property: 'og:type', content: 'website' });
